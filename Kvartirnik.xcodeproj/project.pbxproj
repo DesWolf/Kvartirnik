@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		9E6067A9245DB80200881E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067A8245DB80200881E82 /* AppDelegate.swift */; };
 		9E6067AB245DB80200881E82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067AA245DB80200881E82 /* SceneDelegate.swift */; };
-		9E6067AD245DB80200881E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067AC245DB80200881E82 /* ViewController.swift */; };
+		9E6067AD245DB80200881E82 /* NewEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067AC245DB80200881E82 /* NewEventVC.swift */; };
 		9E6067B0245DB80200881E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6067AE245DB80200881E82 /* Main.storyboard */; };
 		9E6067B2245DB80600881E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6067B1245DB80600881E82 /* Assets.xcassets */; };
 		9E6067B5245DB80600881E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6067B3245DB80600881E82 /* LaunchScreen.storyboard */; };
+		9E6067BE245DBA5B00881E82 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067BD245DBA5B00881E82 /* EventsVC.swift */; };
+		9E6067C1245DBA9800881E82 /* HistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067C0245DBA9800881E82 /* HistoryTVC.swift */; };
+		9E6067C4245DBAF400881E82 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067C3245DBAF400881E82 /* ProfileVC.swift */; };
+		9E6067C7245DE1B700881E82 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067C6245DE1B700881E82 /* EventsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9E6067A5245DB80200881E82 /* Kvartirnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kvartirnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6067A8245DB80200881E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E6067AA245DB80200881E82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9E6067AC245DB80200881E82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9E6067AC245DB80200881E82 /* NewEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventVC.swift; sourceTree = "<group>"; };
 		9E6067AF245DB80200881E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E6067B1245DB80600881E82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E6067B4245DB80600881E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E6067B6245DB80600881E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E6067BD245DBA5B00881E82 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
+		9E6067C0245DBA9800881E82 /* HistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTVC.swift; sourceTree = "<group>"; };
+		9E6067C3245DBAF400881E82 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		9E6067C6245DE1B700881E82 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +66,49 @@
 			children = (
 				9E6067A8245DB80200881E82 /* AppDelegate.swift */,
 				9E6067AA245DB80200881E82 /* SceneDelegate.swift */,
-				9E6067AC245DB80200881E82 /* ViewController.swift */,
 				9E6067AE245DB80200881E82 /* Main.storyboard */,
-				9E6067B1245DB80600881E82 /* Assets.xcassets */,
 				9E6067B3245DB80600881E82 /* LaunchScreen.storyboard */,
+				9E6067BF245DBA6300881E82 /* Events */,
+				9E6067BC245DBA2B00881E82 /* NewEvent */,
+				9E6067C2245DBA9D00881E82 /* HistoryTVC */,
+				9E6067C5245DBB0D00881E82 /* Profile */,
+				9E6067B1245DB80600881E82 /* Assets.xcassets */,
 				9E6067B6245DB80600881E82 /* Info.plist */,
 			);
 			path = Kvartirnik;
+			sourceTree = "<group>";
+		};
+		9E6067BC245DBA2B00881E82 /* NewEvent */ = {
+			isa = PBXGroup;
+			children = (
+				9E6067AC245DB80200881E82 /* NewEventVC.swift */,
+			);
+			path = NewEvent;
+			sourceTree = "<group>";
+		};
+		9E6067BF245DBA6300881E82 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				9E6067BD245DBA5B00881E82 /* EventsVC.swift */,
+				9E6067C6245DE1B700881E82 /* EventsTableViewCell.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		9E6067C2245DBA9D00881E82 /* HistoryTVC */ = {
+			isa = PBXGroup;
+			children = (
+				9E6067C0245DBA9800881E82 /* HistoryTVC.swift */,
+			);
+			path = HistoryTVC;
+			sourceTree = "<group>";
+		};
+		9E6067C5245DBB0D00881E82 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9E6067C3245DBAF400881E82 /* ProfileVC.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E6067AD245DB80200881E82 /* ViewController.swift in Sources */,
+				9E6067C4245DBAF400881E82 /* ProfileVC.swift in Sources */,
+				9E6067C7245DE1B700881E82 /* EventsTableViewCell.swift in Sources */,
+				9E6067C1245DBA9800881E82 /* HistoryTVC.swift in Sources */,
+				9E6067BE245DBA5B00881E82 /* EventsVC.swift in Sources */,
+				9E6067AD245DB80200881E82 /* NewEventVC.swift in Sources */,
 				9E6067A9245DB80200881E82 /* AppDelegate.swift in Sources */,
 				9E6067AB245DB80200881E82 /* SceneDelegate.swift in Sources */,
 			);
