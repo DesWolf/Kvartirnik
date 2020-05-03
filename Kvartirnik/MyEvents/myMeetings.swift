@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryTVC: UITableViewController {
+class myEvents: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

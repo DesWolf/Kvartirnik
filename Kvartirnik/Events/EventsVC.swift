@@ -11,19 +11,25 @@ import UIKit
 class EventsVC: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    
+    let categories = [CategoryModel(type: "Интересное"), CategoryModel(type: "Кулинария"), CategoryModel(type: "Музыка"), CategoryModel(type: "Настольные игры"), CategoryModel(type: "Компьютерные игры"), CategoryModel(type: "Спорт"), CategoryModel(type: "Книги")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
 
 extension EventsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventsCell", for: indexPath) as? EventsTableViewCell else { fatalError("Unable to create tableView cell") }
+        
+        let category = categories[indexPath.row]
+        cell.configure(with: category)
+        
         return cell
     }
     
