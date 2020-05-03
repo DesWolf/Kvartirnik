@@ -9,7 +9,9 @@
 import Foundation
 
 struct EventModel {
+
     let id: Int
+    let category: String
     let eventDate: String
     let eventOwner: String
     let eventDescription: String

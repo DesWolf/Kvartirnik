@@ -15,9 +15,10 @@ class EventsCollectionViewCell: UICollectionViewCell {
     @IBOutlet var eventDescription: UILabel!
     @IBOutlet var eventImage: UIImageView!
     
-
-    
     func configere(with category: EventModel) {
-        self.eventDescription.text = category.eventDate
+        self.eventDate.text = category.eventDate
+        self.eventOwner.text = category.eventOwner
+        self.eventDescription.text = category.eventDescription
+        self.eventImage.image = UIImage(named: "\(category.eventImage)")
     }
 }

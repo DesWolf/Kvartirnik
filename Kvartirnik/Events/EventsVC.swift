@@ -12,7 +12,12 @@ class EventsVC: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
-    let categories = [CategoryModel(type: "Интересное"), CategoryModel(type: "Кулинария"), CategoryModel(type: "Музыка"), CategoryModel(type: "Настольные игры"), CategoryModel(type: "Компьютерные игры"), CategoryModel(type: "Спорт"), CategoryModel(type: "Книги")]
+    let categories = [CategoryModel(type: "Интересное"),
+                      CategoryModel(type: "Кулинария"),
+                      CategoryModel(type: "Музыка"),
+                      CategoryModel(type: "Игры"),
+                      CategoryModel(type: "Спорт"),
+                      CategoryModel(type: "Книги")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +34,8 @@ extension EventsVC: UITableViewDelegate, UITableViewDataSource {
         
         let category = categories[indexPath.row]
         cell.configure(with: category)
-        
+        cell.collectionView.tag = indexPath.row
+        cell.collectionView.reloadData()
         return cell
     }
     

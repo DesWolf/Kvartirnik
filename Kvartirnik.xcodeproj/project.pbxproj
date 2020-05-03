@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E322E6F245F2F7A0089FEE1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E322E6E245F2F7A0089FEE1 /* TestData.swift */; };
 		9E6067A9245DB80200881E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067A8245DB80200881E82 /* AppDelegate.swift */; };
 		9E6067AB245DB80200881E82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067AA245DB80200881E82 /* SceneDelegate.swift */; };
 		9E6067AD245DB80200881E82 /* NewEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067AC245DB80200881E82 /* NewEventVC.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E322E6E245F2F7A0089FEE1 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		9E6067A5245DB80200881E82 /* Kvartirnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kvartirnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6067A8245DB80200881E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E6067AA245DB80200881E82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		9E6067BF245DBA6300881E82 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				9E322E6E245F2F7A0089FEE1 /* TestData.swift */,
 				9E73B424245EFBB50000AEB1 /* CategoryModel.swift */,
 				9E73B422245EF4360000AEB1 /* EventsCollectionViewCell.swift */,
 				9E6067BD245DBA5B00881E82 /* EventsVC.swift */,
@@ -194,6 +197,7 @@
 				9E6067C4245DBAF400881E82 /* ProfileVC.swift in Sources */,
 				9E6067C7245DE1B700881E82 /* EventsTableViewCell.swift in Sources */,
 				9E73B423245EF4360000AEB1 /* EventsCollectionViewCell.swift in Sources */,
+				9E322E6F245F2F7A0089FEE1 /* TestData.swift in Sources */,
 				9E6067C1245DBA9800881E82 /* myMeetings.swift in Sources */,
 				9E6067BE245DBA5B00881E82 /* EventsVC.swift in Sources */,
 				9E6067AD245DB80200881E82 /* NewEventVC.swift in Sources */,
