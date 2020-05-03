@@ -85,7 +85,10 @@ extension EventsTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
         return CGSize(width: 145, height: 145)
     }
  
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) {
-        
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) {
+//
+//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Ебать тут волки \(collectionView.tag)")
     }
 }

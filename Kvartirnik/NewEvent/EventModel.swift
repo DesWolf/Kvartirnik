@@ -15,5 +15,5 @@ struct EventModel {
     let eventDate: String
     let eventOwner: String
     let eventDescription: String
-    let eventImage: String
+    let eventImage: String?
 }

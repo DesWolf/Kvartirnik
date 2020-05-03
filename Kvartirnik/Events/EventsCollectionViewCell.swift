@@ -19,6 +19,6 @@ class EventsCollectionViewCell: UICollectionViewCell {
         self.eventDate.text = category.eventDate
         self.eventOwner.text = category.eventOwner
         self.eventDescription.text = category.eventDescription
-        self.eventImage.image = UIImage(named: "\(category.eventImage)")
+        self.eventImage.image = UIImage(named: "\(category.eventImage ?? "")")
     }
 }
