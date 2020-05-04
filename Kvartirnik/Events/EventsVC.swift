@@ -9,9 +9,10 @@
 import UIKit
 
 class EventsVC: UIViewController {
-
+    
     @IBOutlet var tableView: UITableView!
     
+    private let eventTableViewCell = EventsTableViewCell()
     let categories = [CategoryModel(type: "Интересное"),
                       CategoryModel(type: "Кулинария"),
                       CategoryModel(type: "Музыка"),
@@ -21,6 +22,8 @@ class EventsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    @IBAction func refreshButton(_ sender: Any) {
     }
 }
 
@@ -36,6 +39,7 @@ extension EventsVC: UITableViewDelegate, UITableViewDataSource {
         cell.configure(with: category)
         cell.collectionView.tag = indexPath.row
         cell.collectionView.reloadData()
+        cell.delegate = self
         return cell
     }
     
@@ -43,3 +47,16 @@ extension EventsVC: UITableViewDelegate, UITableViewDataSource {
         return 190
     }
 }
+
+extension EventsVC: CollectionCellSelectedProtocol {
+    
+    func sendDatatoVC(myData: EventModel) {
+        
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detailEventTVC = mainStoryBoard.instantiateViewController(withIdentifier: "detailEventTVC") as! DetailEventTVC
+        detailEventTVC.event = myData
+        self.navigationController?.pushViewController(detailEventTVC, animated: true)
+        
+    }
+}
+

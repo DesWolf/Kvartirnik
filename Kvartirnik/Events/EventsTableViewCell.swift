@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol CollectionCellSelectedProtocol: AnyObject {
+    func sendDatatoVC(myData: EventModel)
+}
+
 class EventsTableViewCell: UITableViewCell {
     
-//Мне стыдно за этот код, в реальной жизни я так не делаю
+    //Мне стыдно за этот код, в реальной жизни я так не делаю
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var groupName: UILabel!
+    
+    weak var delegate:CollectionCellSelectedProtocol?
     
     let eventsIntresting = TestData.eventsIntresting
     let eventsCooking = TestData.eventsCooking
@@ -71,9 +77,9 @@ extension EventsTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
         case 4:
             let element = eventsSport[indexPath.row]
             cell.configere(with: element)
-            case 5:
-                let element = eventsBooks[indexPath.row]
-                cell.configere(with: element)
+        case 5:
+            let element = eventsBooks[indexPath.row]
+            cell.configere(with: element)
         default:
             cell.eventImage.image = #imageLiteral(resourceName: "photo_2020-04-29_16-16-35")
         }
@@ -83,8 +89,32 @@ extension EventsTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 145, height: 145)
     }
- 
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch collectionView.tag {
+        case 0:
+            let element = TestData.eventsIntresting[indexPath.row]
+            self.delegate?.sendDatatoVC(myData:element)
+        case 1:
+            let element = eventsCooking[indexPath.row]
+            self.delegate?.sendDatatoVC(myData:element)
+        case 2:
+            let element = eventsMusic[indexPath.row]
+            self.delegate?.sendDatatoVC(myData:element)
+        case 3:
+            let element = eventsGames[indexPath.row]
+            self.delegate?.sendDatatoVC(myData:element)
+        case 4:
+            let element = eventsSport[indexPath.row]
+            self.delegate?.sendDatatoVC(myData:element)
+        case 5:
+            let element = eventsBooks[indexPath.row]
+            self.delegate?.sendDatatoVC(myData:element)
+        default:
+            return
+        }
         
     }
 }
+

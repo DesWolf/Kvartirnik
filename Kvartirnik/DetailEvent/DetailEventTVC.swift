@@ -9,12 +9,16 @@
 import UIKit
 
 class DetailEventTVC: UITableViewController {
-
+    
+    // Мне стыдно за этот код, но времени было очень мало!
+    
     @IBOutlet var eventImage: UIImageView!
     @IBOutlet var eventName: UILabel!
     @IBOutlet var ownerName: UILabel!
     @IBOutlet var eventDescription: UILabel!
     @IBOutlet var eventDate: UILabel!
+    @IBOutlet var joinButton: UIButton!
+    @IBOutlet var editButton: UIBarButtonItem!
     
     var eventLink: String = ""
     
@@ -22,82 +26,54 @@ class DetailEventTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(event)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        setScreen()
+        
     }
-
+    
+    func setScreen() {
+        
+        eventName.text = event.eventName
+        ownerName.text = event.eventOwner
+        eventDescription.text = event.eventDescription
+        eventDate.text = event.eventDate
+        
+        if event.eventOwner == "Max Okuneev" {
+            if event.eventImage == "" {
+                eventImage.image = standartImage(name: event.category)
+            } else {
+                eventImage.image = UIImage(named: event.eventImage ?? "")
+            }
+            joinButton.setTitle("Отправить ссылку!", for: .normal) 
+            joinButton.setTitleColor(.white, for: .normal)
+            joinButton.backgroundColor = UIColor(cgColor: CGColor(srgbRed: 90/256, green: 200/256, blue: 250/256, alpha: 1))
+        } else {
+            eventImage.image = UIImage(named: event.eventImage ?? "")
+            self.navigationItem.rightBarButtonItem = nil
+        }
+    }
     // MARK: - Table view data source
-
+    
     @IBAction func JoinButton(_ sender: Any) {
     }
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+
+    
+}
+
+extension DetailEventTVC {
+    func standartImage(name: String)-> UIImage {
+        switch name {
+        case "Кулинария":
+            return UIImage(named: "cockingStandartImage")!
+        case "Музыка":
+            return UIImage(named: "musicStandatImage")!
+        case "Игры":
+            return UIImage(named: "gamesStandartImage")!
+        case "Спорт":
+            return UIImage(named: "sportStandartImage")!
+        case "Книги":
+            return UIImage(named: "booksStandartImage")!
+        default:
+            return #imageLiteral(resourceName: "intrestingStandatImage")
+        }
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

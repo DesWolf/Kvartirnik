@@ -15,13 +15,14 @@
 		9E6067B2245DB80600881E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6067B1245DB80600881E82 /* Assets.xcassets */; };
 		9E6067B5245DB80600881E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6067B3245DB80600881E82 /* LaunchScreen.storyboard */; };
 		9E6067BE245DBA5B00881E82 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067BD245DBA5B00881E82 /* EventsVC.swift */; };
-		9E6067C1245DBA9800881E82 /* myMeetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067C0245DBA9800881E82 /* myMeetings.swift */; };
+		9E6067C1245DBA9800881E82 /* myEventsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067C0245DBA9800881E82 /* myEventsTVC.swift */; };
 		9E6067C4245DBAF400881E82 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067C3245DBAF400881E82 /* ProfileVC.swift */; };
 		9E6067C7245DE1B700881E82 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6067C6245DE1B700881E82 /* EventsTableViewCell.swift */; };
 		9E73B423245EF4360000AEB1 /* EventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E73B422245EF4360000AEB1 /* EventsCollectionViewCell.swift */; };
 		9E73B425245EFBB50000AEB1 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E73B424245EFBB50000AEB1 /* CategoryModel.swift */; };
 		9E73B427245EFC1F0000AEB1 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E73B426245EFC1F0000AEB1 /* EventModel.swift */; };
 		9E77000324603B6000C7453A /* DetailEventTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E77000224603B6000C7453A /* DetailEventTVC.swift */; };
+		9E9EDB8D24609A3300730193 /* myEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9EDB8C24609A3300730193 /* myEventsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +36,14 @@
 		9E6067B4245DB80600881E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E6067B6245DB80600881E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E6067BD245DBA5B00881E82 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
-		9E6067C0245DBA9800881E82 /* myMeetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMeetings.swift; sourceTree = "<group>"; };
+		9E6067C0245DBA9800881E82 /* myEventsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myEventsTVC.swift; sourceTree = "<group>"; };
 		9E6067C3245DBAF400881E82 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		9E6067C6245DE1B700881E82 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		9E73B422245EF4360000AEB1 /* EventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E73B424245EFBB50000AEB1 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		9E73B426245EFC1F0000AEB1 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		9E77000224603B6000C7453A /* DetailEventTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventTVC.swift; sourceTree = "<group>"; };
+		9E9EDB8C24609A3300730193 /* myEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myEventsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +94,8 @@
 		9E6067BC245DBA2B00881E82 /* NewEvent */ = {
 			isa = PBXGroup;
 			children = (
-				9E73B426245EFC1F0000AEB1 /* EventModel.swift */,
 				9E6067AC245DB80200881E82 /* NewEventVC.swift */,
+				9E73B426245EFC1F0000AEB1 /* EventModel.swift */,
 			);
 			path = NewEvent;
 			sourceTree = "<group>";
@@ -113,7 +115,8 @@
 		9E6067C2245DBA9D00881E82 /* MyEvents */ = {
 			isa = PBXGroup;
 			children = (
-				9E6067C0245DBA9800881E82 /* myMeetings.swift */,
+				9E6067C0245DBA9800881E82 /* myEventsTVC.swift */,
+				9E9EDB8C24609A3300730193 /* myEventsTableViewCell.swift */,
 			);
 			path = MyEvents;
 			sourceTree = "<group>";
@@ -209,7 +212,8 @@
 				9E6067C7245DE1B700881E82 /* EventsTableViewCell.swift in Sources */,
 				9E73B423245EF4360000AEB1 /* EventsCollectionViewCell.swift in Sources */,
 				9E322E6F245F2F7A0089FEE1 /* TestData.swift in Sources */,
-				9E6067C1245DBA9800881E82 /* myMeetings.swift in Sources */,
+				9E6067C1245DBA9800881E82 /* myEventsTVC.swift in Sources */,
+				9E9EDB8D24609A3300730193 /* myEventsTableViewCell.swift in Sources */,
 				9E6067BE245DBA5B00881E82 /* EventsVC.swift in Sources */,
 				9E6067AD245DB80200881E82 /* NewEventVC.swift in Sources */,
 				9E6067A9245DB80200881E82 /* AppDelegate.swift in Sources */,

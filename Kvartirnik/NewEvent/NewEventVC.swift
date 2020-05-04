@@ -44,7 +44,6 @@ class NewEventVC: UITableViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-//        saveAlert()
         
         switch categoryLabel.text {
         case "Кулинария":
@@ -61,18 +60,14 @@ class NewEventVC: UITableViewController {
             return
         }
     }
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            if segue.destination is DetailEventTVC {
-//
-//                let destinationVC = segue.destination as? DetailEventTVC
-//                destinationVC?.event = EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "gamesStandartImage")
-////                destinationVC?.eventDate.text = self.dateLabel.text ?? ""
-////                destinationVC?.eventImage.image = standartImage(name: "\(categoryLabel.text)")
-////                destinationVC?.eventName.text = self.eventNameTF.text ?? ""
-////                destinationVC?.eventDescription.text = self.descriptionTF.text ?? ""
-//
-//            }
-//        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is UINavigationController {
+            let navVC = segue.destination as? UINavigationController
+            let tableVC = navVC?.viewControllers.first as! DetailEventTVC
+            tableVC.event = EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "")
+            TestData.myEvents.append(EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: ""))
+        }
+    }
 }
 
 //MARK: TableViewDelegate, TableViewDataSource
@@ -171,32 +166,27 @@ extension UIViewController {
     }
 }
 
-extension NewEventVC {
-    private func saveAlert() {
-        let alertController = UIAlertController(title: "Ваше событие создано!", message: "", preferredStyle: .alert)
-        
-        alertController.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (UIAlertAction) in
-        }))
-        
-        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
-        rootViewController?.present(alertController, animated: true, completion: nil)
-    }
-}
 
 extension NewEventVC {
     func toNewFormatDate(dateString: String) -> String{
         var result = ""
         let formatter = DateFormatter()
         let formatter2 = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd hh:mm:ss Z"
-        formatter2.dateFormat = "yyyy-MM-dd hh:mm:ss Z"
-        if let date = formatter.date(from: dateString), let time = formatter2.date(from: dateString)  {
-            formatter.dateFormat = "dd.MM.yy"
-            formatter2.dateFormat = "hh:mm"
-            result = "\(formatter.string(from: date)) в \(formatter2.string(from: time))"
-            print(result)
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        if let date = formatter.date(from: dateString) {
+            formatter.dateFormat = "dd.MM.yy hh:mm"
+            result = "\(formatter.string(from: date))"
         }
         return result
+        
+        //        formatter2.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        //        if let date = formatter.date(from: dateString), let time = formatter2.date(from: dateString)  {
+        //            formatter.dateFormat = "dd.MM.yy"
+        //            formatter2.dateFormat = "hh:mm"
+        //            result = "\(formatter.string(from: date)) в \(formatter2.string(from: time))"
+        //            print(result)
+        //        }
+        //        return result
     }
     
     func standartImage(name: String)-> UIImage {
