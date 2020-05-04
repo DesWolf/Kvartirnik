@@ -21,6 +21,7 @@
 		9E73B423245EF4360000AEB1 /* EventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E73B422245EF4360000AEB1 /* EventsCollectionViewCell.swift */; };
 		9E73B425245EFBB50000AEB1 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E73B424245EFBB50000AEB1 /* CategoryModel.swift */; };
 		9E73B427245EFC1F0000AEB1 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E73B426245EFC1F0000AEB1 /* EventModel.swift */; };
+		9E77000324603B6000C7453A /* DetailEventTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E77000224603B6000C7453A /* DetailEventTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9E73B422245EF4360000AEB1 /* EventsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E73B424245EFBB50000AEB1 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		9E73B426245EFC1F0000AEB1 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		9E77000224603B6000C7453A /* DetailEventTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				9E6067AE245DB80200881E82 /* Main.storyboard */,
 				9E6067B3245DB80600881E82 /* LaunchScreen.storyboard */,
 				9E6067BF245DBA6300881E82 /* Events */,
+				9E770001246039E600C7453A /* DetailEvent */,
 				9E6067BC245DBA2B00881E82 /* NewEvent */,
 				9E6067C2245DBA9D00881E82 /* MyEvents */,
 				9E6067C5245DBB0D00881E82 /* Profile */,
@@ -121,6 +124,14 @@
 				9E6067C3245DBAF400881E82 /* ProfileVC.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		9E770001246039E600C7453A /* DetailEvent */ = {
+			isa = PBXGroup;
+			children = (
+				9E77000224603B6000C7453A /* DetailEventTVC.swift */,
+			);
+			path = DetailEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 				9E6067AD245DB80200881E82 /* NewEventVC.swift in Sources */,
 				9E6067A9245DB80200881E82 /* AppDelegate.swift in Sources */,
 				9E73B425245EFBB50000AEB1 /* CategoryModel.swift in Sources */,
+				9E77000324603B6000C7453A /* DetailEventTVC.swift in Sources */,
 				9E73B427245EFC1F0000AEB1 /* EventModel.swift in Sources */,
 				9E6067AB245DB80200881E82 /* SceneDelegate.swift in Sources */,
 			);

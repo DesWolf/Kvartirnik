@@ -35,9 +35,7 @@ class EventsTableViewCell: UITableViewCell {
     
     func configure(with category: CategoryModel) {
         self.groupName.text = category.type
-        
     }
-    
 }
 
 extension EventsTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

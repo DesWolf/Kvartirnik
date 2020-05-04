@@ -44,18 +44,35 @@ class NewEventVC: UITableViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        print("Жмааак")
-        saveAlert()
-        TestData.eventsCooking.append(EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "cockingStandartImage"))
-        print(TestData.eventsCooking)
+//        saveAlert()
         
+        switch categoryLabel.text {
+        case "Кулинария":
+            TestData.eventsCooking.append(EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "cockingStandartImage"))
+        case "Музыка":
+            TestData.eventsMusic.append(EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "musicStandatImage"))
+        case "Игры":
+            TestData.eventsGames.append(EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "gamesStandartImage"))
+        case "Спорт":
+            TestData.eventsSport.append(EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "sportStandartImage"))
+        case "Книги":
+            TestData.eventsBooks.append(EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "booksStandartImage"))
+        default:
+            return
+        }
     }
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //            if segue.identifier == "backTableView" {
-    //            let destinationVC = segue.destination as! EventsVC
-    //            destinationVC.name = names
-    //        }
-    //    }
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            if segue.destination is DetailEventTVC {
+//
+//                let destinationVC = segue.destination as? DetailEventTVC
+//                destinationVC?.event = EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "gamesStandartImage")
+////                destinationVC?.eventDate.text = self.dateLabel.text ?? ""
+////                destinationVC?.eventImage.image = standartImage(name: "\(categoryLabel.text)")
+////                destinationVC?.eventName.text = self.eventNameTF.text ?? ""
+////                destinationVC?.eventDescription.text = self.descriptionTF.text ?? ""
+//
+//            }
+//        }
 }
 
 //MARK: TableViewDelegate, TableViewDataSource
@@ -177,7 +194,26 @@ extension NewEventVC {
             formatter.dateFormat = "dd.MM.yy"
             formatter2.dateFormat = "hh:mm"
             result = "\(formatter.string(from: date)) в \(formatter2.string(from: time))"
+            print(result)
         }
         return result
     }
+    
+    func standartImage(name: String)-> UIImage {
+        switch name {
+        case "Кулинария":
+            return UIImage(named: "cockingStandartImage")!
+        case "Музыка":
+            return UIImage(named: "musicStandatImage")!
+        case "Игры":
+            return UIImage(named: "gamesStandartImage")!
+        case "Спорт":
+            return UIImage(named: "sportStandartImage")!
+        case "Книги":
+            return UIImage(named: "booksStandartImage")!
+        default:
+            return #imageLiteral(resourceName: "intrestingStandatImage")
+        }
+    }
 }
+

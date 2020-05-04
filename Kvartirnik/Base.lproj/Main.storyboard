@@ -20,9 +20,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="J4P-3S-jov" kind="relationship" relationship="viewControllers" id="sFL-om-Oh3"/>
                         <segue destination="YUg-7J-u1n" kind="relationship" relationship="viewControllers" id="7Jr-hh-IHf"/>
                         <segue destination="R7F-sl-pCo" kind="relationship" relationship="viewControllers" id="qLh-MA-xOf"/>
+                        <segue destination="J4P-3S-jov" kind="relationship" relationship="viewControllers" id="sFL-om-Oh3"/>
                         <segue destination="UAT-gS-wQ0" kind="relationship" relationship="viewControllers" id="5XG-Am-ci2"/>
                     </connections>
                 </tabBarController>
@@ -545,7 +545,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="How-4I-4dS">
                                                     <rect key="frame" x="82" y="25" width="250" height="39"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.2413900793" green="0.53395974639999999" blue="0.781021297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="ogQ-8n-Yoy"/>
                                                     </constraints>
@@ -560,7 +560,6 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="saveButtonAction:" destination="R7F-sl-pCo" eventType="touchUpInside" id="ehM-ye-ShS"/>
-                                                        <segue destination="fRi-pr-Wtd" kind="presentation" modalPresentationStyle="fullScreen" id="FOJ-2t-t5E"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -597,10 +596,10 @@
             </objects>
             <point key="canvasLocation" x="3557.971014492754" y="813.61607142857144"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Detail EventTVC-->
         <scene sceneID="97E-cY-88y">
             <objects>
-                <tableViewController id="A1B-bO-1ST" sceneMemberID="viewController">
+                <tableViewController id="A1B-bO-1ST" customClass="DetailEventTVC" customModule="Kvartirnik" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F2V-Fc-kED">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -693,6 +692,9 @@
                                                             <rect key="frame" x="0.0" y="17.5" width="152" height="30"/>
                                                             <color key="backgroundColor" red="0.64063865389999997" green="1" blue="0.26942831389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Присоеденится"/>
+                                                            <connections>
+                                                                <action selector="JoinButton:" destination="A1B-bO-1ST" eventType="touchUpInside" id="w8k-cE-C1B"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ожидающих зрителей: 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCh-Ex-yPQ">
                                                             <rect key="frame" x="0.0" y="50.5" width="152" height="14.5"/>
@@ -723,21 +725,21 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="159" id="Dat-Ka-XTi">
-                                        <rect key="frame" x="0.0" y="400" width="414" height="159"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="123" id="Dat-Ka-XTi">
+                                        <rect key="frame" x="0.0" y="400" width="414" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dat-Ka-XTi" id="d6Z-sg-EUf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Организатор: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ol5-UK-rPX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание встречи:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ol5-UK-rPX">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="eventDescription:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pY-ac-4xM">
-                                                    <rect key="frame" x="20" y="28" width="374" height="102"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eventDescription:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pY-ac-4xM">
+                                                    <rect key="frame" x="20" y="28" width="374" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -769,6 +771,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="Ufb-qy-Qj5"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="eventDate" destination="L3g-hk-ir6" id="cRH-YH-fQe"/>
+                        <outlet property="eventDescription" destination="1pY-ac-4xM" id="7LG-aw-cLq"/>
+                        <outlet property="eventImage" destination="sHg-wY-BOm" id="MHS-3t-cXt"/>
+                        <outlet property="eventName" destination="QTI-hk-nRZ" id="G29-6R-loE"/>
+                        <outlet property="ownerName" destination="i1t-QH-GWG" id="09g-a0-k27"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yL-Hi-cqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -877,9 +886,6 @@
             <point key="canvasLocation" x="4395.652173913044" y="158.70535714285714"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="FOJ-2t-t5E"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Calendar" width="28" height="25"/>
         <image name="Comment" width="45" height="39"/>
