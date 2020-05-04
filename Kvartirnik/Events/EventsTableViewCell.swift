@@ -114,7 +114,5 @@ extension EventsTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
         default:
             return
         }
-        
     }
 }
-

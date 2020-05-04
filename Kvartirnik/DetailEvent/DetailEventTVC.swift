@@ -27,11 +27,9 @@ class DetailEventTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setScreen()
-        
     }
     
     func setScreen() {
-        
         eventName.text = event.eventName
         ownerName.text = event.eventOwner
         eventDescription.text = event.eventDescription
@@ -51,12 +49,9 @@ class DetailEventTVC: UITableViewController {
             self.navigationItem.rightBarButtonItem = nil
         }
     }
-    // MARK: - Table view data source
     
     @IBAction func JoinButton(_ sender: Any) {
     }
-
-    
 }
 
 extension DetailEventTVC {

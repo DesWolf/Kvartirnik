@@ -171,22 +171,12 @@ extension NewEventVC {
     func toNewFormatDate(dateString: String) -> String{
         var result = ""
         let formatter = DateFormatter()
-        let formatter2 = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         if let date = formatter.date(from: dateString) {
             formatter.dateFormat = "dd.MM.yy hh:mm"
             result = "\(formatter.string(from: date))"
         }
         return result
-        
-        //        formatter2.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-        //        if let date = formatter.date(from: dateString), let time = formatter2.date(from: dateString)  {
-        //            formatter.dateFormat = "dd.MM.yy"
-        //            formatter2.dateFormat = "hh:mm"
-        //            result = "\(formatter.string(from: date)) в \(formatter2.string(from: time))"
-        //            print(result)
-        //        }
-        //        return result
     }
     
     func standartImage(name: String)-> UIImage {
@@ -206,4 +196,3 @@ extension NewEventVC {
         }
     }
 }
-

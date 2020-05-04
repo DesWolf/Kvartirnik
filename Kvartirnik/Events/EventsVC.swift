@@ -54,7 +54,6 @@ extension EventsVC: CollectionCellSelectedProtocol {
         let detailEventTVC = mainStoryBoard.instantiateViewController(withIdentifier: "detailEventTVC") as! DetailEventTVC
         detailEventTVC.event = myData
         self.navigationController?.pushViewController(detailEventTVC, animated: true)
-        
     }
 }
 
