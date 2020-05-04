@@ -49,9 +49,7 @@ extension EventsVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension EventsVC: CollectionCellSelectedProtocol {
-    
     func sendDatatoVC(myData: EventModel) {
-        
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         let detailEventTVC = mainStoryBoard.instantiateViewController(withIdentifier: "detailEventTVC") as! DetailEventTVC
         detailEventTVC.event = myData

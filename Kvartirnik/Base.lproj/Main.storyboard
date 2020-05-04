@@ -807,7 +807,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yL-Hi-cqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3716" y="-654"/>
+            <point key="canvasLocation" x="4683" y="201"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="8wZ-HK-NvI">
@@ -901,6 +901,7 @@
                                     <outlet property="eventDescription" destination="NHv-TA-I5E" id="jti-G6-lZO"/>
                                     <outlet property="eventImage" destination="Dlv-I7-ekv" id="xaw-Pu-g1M"/>
                                     <outlet property="eventOwner" destination="Vhh-7c-qqS" id="5xx-Bw-OwE"/>
+                                    <segue destination="fRi-pr-Wtd" kind="presentation" identifier="showMyEventDetail" modalPresentationStyle="fullScreen" id="6CM-h4-djg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -992,6 +993,9 @@
             <point key="canvasLocation" x="1819" y="149"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="n3H-vF-anQ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Calendar" width="28" height="25"/>
         <image name="Comment" width="45" height="39"/>
