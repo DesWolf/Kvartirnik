@@ -8,9 +8,11 @@
 
 import UIKit
 
+//Мне стыдно за этот код, в реальной жизни я так не делаю
+
 class NewEventVC: UITableViewController {
     
-    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var eventNameTF: UITextField!
     @IBOutlet weak var descriptionTF: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -22,6 +24,7 @@ class NewEventVC: UITableViewController {
     @IBOutlet weak var linkTF: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    var newEvent: [EventModel] = []
     var categories = ["Кулинария", "Музыка","Игры", "Спорт", "Книги"]
     var duration = ["30 минут", "60 минут", "90 минут", "120 минут", "Не известно"]
     
@@ -29,7 +32,7 @@ class NewEventVC: UITableViewController {
         super.viewDidLoad()
         
         datePicker.date = NSDate() as Date
-        dateLabel.text = "\(datePicker.date)"
+        dateLabel.text = toNewFormatDate(dateString: "\(datePicker.date)")
         datePicker.isHidden = true
         durationPicker.isHidden = true
         categoryPicker.isHidden = true
@@ -37,12 +40,22 @@ class NewEventVC: UITableViewController {
     }
     
     @IBAction func dateChanged(sender: UIDatePicker) {
-        dateLabel.text = "\(datePicker.date)"
+        dateLabel.text = toNewFormatDate(dateString: "\(datePicker.date)")
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
         print("Жмааак")
+        saveAlert()
+        TestData.eventsCooking.append(EventModel(id: 13, category: categoryLabel.text!, eventDate: dateLabel.text!, eventOwner: "Max Okuneev", eventName: eventNameTF.text!, eventDescription: descriptionTF.text!, eventLink: linkTF.text ?? "", eventPrice: priceTF.text ?? "", eventImage: "cockingStandartImage"))
+        print(TestData.eventsCooking)
+        
     }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //            if segue.identifier == "backTableView" {
+    //            let destinationVC = segue.destination as! EventsVC
+    //            destinationVC.name = names
+    //        }
+    //    }
 }
 
 //MARK: TableViewDelegate, TableViewDataSource
@@ -56,7 +69,6 @@ extension NewEventVC {
             return CGFloat(datePicker.isHidden ? 0.0 : 216.0)
         case 7:
             return CGFloat(durationPicker.isHidden ? 0.0 : 120.0)
-            
         default:
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
@@ -65,7 +77,7 @@ extension NewEventVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let categoryIndexPath = IndexPath(row: 1, section: 0)
         let dateIndexPath = IndexPath(row: 4, section: 0)
-        let durationIndexPath = IndexPath(row: 5, section: 0)
+        let durationIndexPath = IndexPath(row: 6, section: 0)
         switch indexPath {
         case categoryIndexPath:
             categoryPicker.isHidden = !categoryPicker.isHidden
@@ -139,5 +151,33 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension NewEventVC {
+    private func saveAlert() {
+        let alertController = UIAlertController(title: "Ваше событие создано!", message: "", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Ок", style: .default, handler: { (UIAlertAction) in
+        }))
+        
+        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
+        rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension NewEventVC {
+    func toNewFormatDate(dateString: String) -> String{
+        var result = ""
+        let formatter = DateFormatter()
+        let formatter2 = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd hh:mm:ss Z"
+        formatter2.dateFormat = "yyyy-MM-dd hh:mm:ss Z"
+        if let date = formatter.date(from: dateString), let time = formatter2.date(from: dateString)  {
+            formatter.dateFormat = "dd.MM.yy"
+            formatter2.dateFormat = "hh:mm"
+            result = "\(formatter.string(from: date)) в \(formatter2.string(from: time))"
+        }
+        return result
     }
 }

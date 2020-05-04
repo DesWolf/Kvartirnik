@@ -18,7 +18,7 @@ class EventsCollectionViewCell: UICollectionViewCell {
     func configere(with category: EventModel) {
         self.eventDate.text = category.eventDate
         self.eventOwner.text = category.eventOwner
-        self.eventDescription.text = category.eventDescription
+        self.eventDescription.text = category.eventName
         self.eventImage.image = UIImage(named: "\(category.eventImage ?? "")")
     }
 }

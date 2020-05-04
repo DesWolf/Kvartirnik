@@ -14,6 +14,9 @@ struct EventModel {
     let category: String
     let eventDate: String
     let eventOwner: String
+    let eventName: String
     let eventDescription: String
+    let eventLink: String
+    let eventPrice: String?
     let eventImage: String?
 }

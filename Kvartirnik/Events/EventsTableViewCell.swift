@@ -10,6 +10,8 @@ import UIKit
 
 class EventsTableViewCell: UITableViewCell {
     
+//Мне стыдно за этот код, в реальной жизни я так не делаю
+    
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var groupName: UILabel!
     
@@ -40,10 +42,9 @@ class EventsTableViewCell: UITableViewCell {
 
 extension EventsTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView.tag {
-        case 0 : return eventsIntresting.count
+        case 0 : return TestData.eventsIntresting.count
         case 1 : return eventsCooking.count
         case 2 : return eventsMusic.count
         case 3 : return eventsGames.count
@@ -58,7 +59,7 @@ extension EventsTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
         
         switch collectionView.tag {
         case 0:
-            let element = eventsIntresting[indexPath.row]
+            let element = TestData.eventsIntresting[indexPath.row]
             cell.configere(with: element)
         case 1:
             let element = eventsCooking[indexPath.row]
@@ -85,10 +86,7 @@ extension EventsTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
         return CGSize(width: 145, height: 145)
     }
  
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) {
-//
-//    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Ебать тут волки \(collectionView.tag)")
+        
     }
 }
